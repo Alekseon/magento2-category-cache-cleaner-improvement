@@ -1,0 +1,3 @@
+"Refresh the Category Cache only if stock status changed for visible products", "Odśwież pamięć podręczną kategorii tylko w przypadku zmiany stanu zapasów widocznych produktów"
+"Enable this option reduce the frequency of clearing the category cache. Only enable it if sizes are not displayed on the category page.","Włącz tę opcję, aby zmniejszyć częstotliwość czyszczenia pamięci podręcznej kategorii. Włącz ją tylko wtedy, gdy rozmiary nie są wyświetlane na stronie kategorii."
+

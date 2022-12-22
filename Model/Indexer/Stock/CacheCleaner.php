@@ -75,6 +75,7 @@ class CacheCleaner extends \Magento\CatalogInventory\Model\Indexer\Stock\CacheCl
         $this->metadataPool = $metadataPool;
         $this->productFactory = $productFactory;
         $this->scopeConfig = $scopeConfig;
+        parent::__construct($resource, $stockConfiguration, $cacheContext, $eventManager, $metadataPool);
     }
 
     /**

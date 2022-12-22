@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 ### Added
 
+## [100.0.1] - 2022-12-22
+### Fix for "Call to a member function getMetadata() on null" error when cache cleanr improvent is disabled
 
 ## [100.0.0] - 2022-11-21
 ### Init

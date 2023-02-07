@@ -85,12 +85,14 @@ class CacheCleaner extends \Magento\CatalogInventory\Model\Indexer\Stock\CacheCl
     public function clean(array $productIds, callable $reindex)
     {
         if ($this->scopeConfig->getValue('catalog/cache/alekseon_cache_cleaner_enabled')) {
+            $cacheTag = $this->scopeConfig->getValue('alekseon/cache_cleaner_improvement/product_page_tag');
             $productStatusesBefore = $this->getProductStockStatuses($productIds);
             $reindex();
             $productStatusesAfter = $this->getProductStockStatuses($productIds);
             $productIds = $this->getProductIdsForCacheClean($productStatusesBefore, $productStatusesAfter);
             if ($productIds) {
-                $this->cacheContext->registerEntities(Product::CACHE_TAG, array_unique($productIds));
+                //$this->cacheContext->registerEntities(Product::CACHE_TAG, array_unique($productIds));
+                $this->cacheContext->registerEntities($cacheTag, array_unique($productIds));
                 $this->eventManager->dispatch('clean_cache_by_tags', ['object' => $this->cacheContext]);
                 $productIdsForCategoryCacheClean = $this->getProductIdsForCategoryCacheClean($productStatusesBefore, $productStatusesAfter);
                 $categoryIds = $this->getCategoryIdsByProductIds($productIdsForCategoryCacheClean);
